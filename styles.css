@@ -351,3 +351,142 @@ footer {
 .equipment-section ul li strong {
     color: #0073e6;
 }
+
+
+
+/* Allgemeine Einstellungen für Mobilgeräte */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header .container,
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img.profile-pic {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Hauptinhalt */
+main .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Equipment Section */
+.equipment-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.equipment-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.equipment-section ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Medienabfragen für kleinere Bildschirme */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main .container {
+        width: 95%;
+    }
+
+    .equipment-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .equipment-section ul li {
+        font-size: 0.9rem;
+    }
+
+    .stream-container {
+        flex-direction: column;
+    }
+
+    .stream-container .stream, .stream-container .social-links {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-links ul li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header img.profile-pic {
+        max-width: 40px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .equipment-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .equipment-section ul li {
+        font-size: 0.8rem;
+    }
+}
