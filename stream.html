@@ -33,14 +33,25 @@
                     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
                     <div id="SamplePlayerDivID"></div>
                     <script type="text/javascript">
-                        var options = {
-                            width: "950px",
-                            height: "500px",
-                            channel: "benfrox",
-                            parent: ["benfrox.github.io"]
-                        };
-                        var player = new Twitch.Player("SamplePlayerDivID", options);
-                        player.setVolume(0.5);
+                        function createTwitchPlayer() {
+                            const isMobile = window.innerWidth <= 768; // Prüfen, ob die Breite für Mobilgeräte gilt
+                            const options = {
+                                width: isMobile ? "100%" : "950px", // Breite anpassen
+                                height: isMobile ? "300px" : "500px", // Höhe anpassen
+                                channel: "benfrox",
+                                parent: ["benfrox.github.io"]
+                            };
+                            new Twitch.Player("SamplePlayerDivID", options).setVolume(0.5);
+                        }
+                    
+                        // Initialen Player erstellen
+                        createTwitchPlayer();
+                    
+                        // Neu rendern, wenn die Fenstergröße sich ändert
+                        window.addEventListener("resize", () => {
+                            document.getElementById("SamplePlayerDivID").innerHTML = ""; // Player-Container leeren
+                            createTwitchPlayer(); // Neuen Player erstellen
+                        });
                     </script>
                 </div>
 
